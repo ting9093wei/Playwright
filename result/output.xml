@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-07-17T22:20:58.058266" rpa="false" schemaversion="5">
+<suite id="s1" name="Cchat" source="C:\Playwright\Function_Test\cchat.robot">
+<test id="s1-t1" name="Open PTT C_chat by Chrome" line="11">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-07-17T22:20:58.171853" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Playwright\\result\\browser\\traces\\temp\\e2d8dda2-2d89-4e5e-a852-a1a1168861a1"}</msg>
+<msg time="2025-07-17T22:20:58.276388" level="INFO">Starting Browser process C:\Users\ting9\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:60010</msg>
+<msg time="2025-07-17T22:20:59.069528" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Playwright\\result\\browser\\traces\\temp\\e2d8dda2-2d89-4e5e-a852-a1a1168861a1"}</msg>
+<arg>chromium</arg>
+<arg>headless=${False}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-07-17T22:20:58.171314" elapsed="0.898348"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-07-17T22:20:59.838172" level="INFO">Successfully initialized new page object and opened url: https://www.ptt.cc/bbs/c_chat/index.html</msg>
+<msg time="2025-07-17T22:20:59.838234" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://www.ptt.cc/bbs/c_chat/index.html</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-07-17T22:20:59.069971" elapsed="0.768371"/>
+</kw>
+<kw name="Maximize Browser Window">
+<kw name="Set Viewport Size" owner="Browser">
+<msg time="2025-07-17T22:20:59.846653" level="INFO">Set viewport size to: [object Object]</msg>
+<arg>1920</arg>
+<arg>1080</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<status status="PASS" start="2025-07-17T22:20:59.839102" elapsed="0.007678"/>
+</kw>
+<doc>This keyword is used to maximize the browser window.</doc>
+<status status="PASS" start="2025-07-17T22:20:59.838731" elapsed="0.008141"/>
+</kw>
+<kw name="Click With Options" owner="Browser">
+<msg time="2025-07-17T22:20:59.847531" level="INFO">Clicks the element 'body &gt; div.bbs-screen.bbs-content.center.clear &gt; form &gt; div:nth-child(2) &gt; button'.</msg>
+<arg>selector=body &gt; div.bbs-screen.bbs-content.center.clear &gt; form &gt; div:nth-child(2) &gt; button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-17T22:20:59.847107" elapsed="0.106705"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2025-07-17T22:21:00.205609" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Test/Cchat/ptt_c_chat.png" target="_blank"&gt;&lt;img src="Test/Cchat/ptt_c_chat.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>${result_path}${/}ptt_c_chat.png</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-07-17T22:20:59.954071" elapsed="0.251658"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-17T22:21:02.206960" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-17T22:21:00.206052" elapsed="2.000996"/>
+</kw>
+<kw name="Test Teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="Browser">
+<msg time="2025-07-17T22:21:02.319726" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-17T22:21:02.207856" elapsed="0.111986"/>
+</kw>
+<doc>This keyword is used to close the browser after the test case execution.</doc>
+<status status="PASS" start="2025-07-17T22:21:02.207509" elapsed="0.112422"/>
+</kw>
+<status status="PASS" start="2025-07-17T22:20:58.170722" elapsed="4.149333"/>
+</test>
+<status status="PASS" start="2025-07-17T22:20:58.059020" elapsed="4.265428"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Cchat" id="s1" pass="1" fail="0" skip="0">Cchat</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-07-17T22:20:58.074740" level="WARN">Imported resource file 'C:\Playwright\resource\ppt.resource' is empty.</msg>
+</errors>
+</robot>
