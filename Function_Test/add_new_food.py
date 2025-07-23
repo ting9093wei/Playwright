@@ -9,8 +9,8 @@ from playwright.sync_api import sync_playwright
 import time
 
 # Variables
-add_btn = '#add_btn'
-row2_input = '#row2 > input'
+add_btn = 'xpath=//*[@id="add_btn"]'
+row2_input = 'xpath=//*[@id="row2"]/input'
 
 with sync_playwright() as playwright:
     browser = playwright.chromium.launch(headless=False)
@@ -23,7 +23,7 @@ with sync_playwright() as playwright:
     page.fill(row2_input, "Pasta")
     save_btn = page.locator('[Name="Save"]:visible')
     save_btn.click()
-    if page.get_by_text("Row 1 was saved").is_visible() :
+    if page.get_by_text("Row 2 was saved").is_visible() :
         print("Test passed")
     else:
         print("Test failed")

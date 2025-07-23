@@ -18,9 +18,15 @@ with sync_playwright() as playwright:
     page.set_viewport_size({"width": 2560, "height": 1440})
     page.goto("https://practicetestautomation.com/practice-test-exceptions/")
     page.click(edit_btn)
-    page.wait_for_selector(row1_input)
     # Type text into the input field
     page.fill(row1_input, "")
-    page.fill(row2_input, "Pasta")
-    row1_content = page.
+    page.fill(row1_input, "Pasta")
+    save_btn = page.locator('[Name="Save"]:visible')
+    save_btn.click()
+    # Verify text changed
+    value = page.get_attribute(row1_input, "value")
+    if value == "Pasta":
+        print("Test passed: Row 1 input changed to Pasta")
+    else:
+        print(f"Test failed: Row 1 input value is {value}")
     browser.close()
