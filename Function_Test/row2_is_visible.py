@@ -22,5 +22,4 @@ with sync_playwright() as playwright:
         print("Test passed")
     else:
         print("Test failed")
-    time.sleep(10)
     browser.close()

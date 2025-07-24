@@ -1,13 +1,5 @@
-# Positive LogIn test
-# Open page
-# Type username student into Username field
-# Type password Password123 into Password field
-# Push Submit button
-# Verify new page URL contains practicetestautomation.com/logged-in-successfully/
-# Verify new page contains expected text ('Congratulations' or 'successfully logged in')
-# Verify button Log out is displayed on the new page
-
 import pytest
+import time
 from playwright.sync_api import sync_playwright, Page
 
 # Variables
@@ -41,8 +33,9 @@ def test_positive_login(page : Page):
     assert "logged-in-successfully" in page.url, "Login was not successful"
 
     # Verify new page contains expected text
-    page.get_by_text("Congratulations,successfully logged in").is_visible()
-    assert page.get_by_text("Congratulations,successfully logged in").is_visible(), "Expected text not found on the page"
+    page.wait_for_selector(TestLocators.logout_button)
+    page.get_by_text("Congratulations student. You successfully logged in!").is_visible()
+    assert page.get_by_text("Congratulations student. You successfully logged in!").is_visible(), "Expected text not found on the page"
     
     # Verify Log out button is displayed
     page.is_visible(TestLocators.logout_button)
