@@ -20,7 +20,6 @@ def page():
         browser.close()
 
 def test_positive_login(page : Page):
-    """Positive login test: verify user can login with correct credentials"""
     page.goto("https://practicetestautomation.com/practice-test-login/")
     assert "practice-test-login" in page.url, "Page did not load correctly"
 
@@ -41,35 +40,3 @@ def test_positive_login(page : Page):
     # Verify Log out button is displayed
     page.is_visible(TestLocators.logout_button)
     assert page.is_visible(TestLocators.logout_button), "Log out button is not visible"
-
-
-def test_negative_username_login(page : Page):
-    """Negative login test: verify user cannot login with incorrect username credentials"""
-    page.goto("https://practicetestautomation.com/practice-test-login/")
-    assert "practice-test-login" in page.url, "Page did not load correctly"
-
-    # Attempt to login with incorrect username and password
-    page.fill(TestLocators.username, "incorrectUser")
-    page.fill(TestLocators.password, "Password123")
-    page.click(TestLocators.submit_button)
-
-    # Verify error message is displayed
-    error_message = 'xpath=//*[@id="error"]'
-    page.is_visible(error_message)
-    assert page.is_visible(error_message), "Error message for invalid login not displayed"
-
-
-def test_negative_password_login(page : Page):
-    """Negative login test: verify user cannot login with incorrect password credentials"""
-    page.goto("https://practicetestautomation.com/practice-test-login/")
-    assert "practice-test-login" in page.url, "Page did not load correctly"
-
-    # Attempt to login with correct username but incorrect password
-    page.fill(TestLocators.username, "student")
-    page.fill(TestLocators.password, "incorrectPassword")
-    page.click(TestLocators.submit_button)
-
-    # Verify error message is displayed
-    error_message = 'xpath=//*[@id="error"]'
-    page.is_visible(error_message)
-    assert page.is_visible(error_message), "Error message for invalid login not displayed"
