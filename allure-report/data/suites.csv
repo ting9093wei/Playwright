@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"Test case for successful login with correct credentials.","2014","test_positive_login","pytest","Tue Jul 29 19:38:06 CST 2025","passed","Tue Jul 29 19:38:08 CST 2025","","test_login","",""
+"Test case for login with an invalid password.","1472","test_negative_password_login","pytest","Tue Jul 29 19:38:12 CST 2025","passed","Tue Jul 29 19:38:13 CST 2025","","test_login","",""
+"Test case for login with an invalid username.","1520","test_negative_username_login","pytest","Tue Jul 29 19:38:09 CST 2025","passed","Tue Jul 29 19:38:11 CST 2025","","test_login","",""
